@@ -1,25 +1,34 @@
-// Import vue and vue-router
+// Dependencies
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 
-// Inject vue-router into Vue
-Vue.use(VueRouter)
+// Component
+import Login from '@/components/login/Login'
+import Home from '@/components/home/Home'
+import DocumentsTable from '@/components/documents-table/Documents-table'
 
-// Define Routes
+// External tools
+Vue.use(Router)
+
 const routes = [
   {
-    name: 'createToDo',
     path: '/',
-    component: {}
+    name: 'login',
+    component: Login
   },
   {
-    name: 'listToDo',
-    path: '/list',
-    component: {}
+    path: '/home',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/documents-table',
+    name: 'documentsTable',
+    component: DocumentsTable
   }
 ]
 
-// Return VueRouter component
-export default new VueRouter({
-  routes
+export default new Router({
+  routes: routes,
+  mode: 'history'
 })

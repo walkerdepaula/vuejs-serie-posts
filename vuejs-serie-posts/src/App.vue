@@ -1,21 +1,14 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <h1></h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div id="app" class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <keep-alive>
+          <sidebar-view v-if="!isLoginPage"></sidebar-view>
+        </keep-alive>
+
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -24,37 +17,30 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      isLoginPage: true
+    }
+  },
+  watch: {
+    '$route' (teste, teste1) {
+      if (teste.fullPath !== '/') {
+        this.isLoginPage = false
+      } else {
+        this.isLoginPage = true
+      }
     }
   }
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+  // Bootstrap
+  @import 'assets/vendors/bootstrap/css/bootstrap.min.css';
+  // Animate
+  @import 'assets/vendors/dashboard/animate.min.css';
+  // Font Awesome
+  @import 'assets/vendors/fonts/css/font-awesome.min.css';
+  // NProgress
+  @import 'assets/vendors/dashboard/nprogress.css';
 
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+  @import 'assets/sass/style.scss';
 </style>
