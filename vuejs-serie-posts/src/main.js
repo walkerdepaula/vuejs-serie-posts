@@ -10,7 +10,7 @@ import store from './store'
 import App from './App'
 
 // Configure productionTip
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
