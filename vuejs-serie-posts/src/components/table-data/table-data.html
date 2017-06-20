@@ -1,26 +1,16 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Firstname</th>
-      <th>Lastname</th>
-      <th>Email</th>
+      <th></th>
+      <th>Fist name</th>
+      <th>Last name</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>John</td>
-      <td>Doe</td>
-      <td>john@example.com</td>
-    </tr>
-    <tr>
-      <td>Mary</td>
-      <td>Moe</td>
-      <td>mary@example.com</td>
-    </tr>
-    <tr>
-      <td>July</td>
-      <td>Dooley</td>
-      <td>july@example.com</td>
+    <tr v-for="(data, index) in dataArray">
+      <td>{{ index+= 1 }}</td>
+      <td>{{ data.fistName }}</td>
+      <td>{{ data.lastName }}</td>
     </tr>
   </tbody>
 </table>

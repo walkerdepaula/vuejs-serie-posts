@@ -6,31 +6,30 @@ export default {
   data () {
     return {
       form: {
-        name: '',
-        email: ''
+        fistName: '',
+        lastName: ''
       }
     }
   },
   computed: {
     dataArray () {
-      return this.$store.state.dataArray
+      return this.$store.state.insertData.list
     }
   },
   methods: {
     _cleanForm () {
       this.form = {
-        name: '',
-        email: ''
+        fistName: '',
+        lastName: ''
       }
     },
     submit () {
-      if (this.form.email !== '' && this.form.name !== '') {
+      if (this.form.lastName !== '' && this.form.fistName !== '') {
         this.$store.commit('DATA_ADD', this.form)
 
-        debugger
         this._cleanForm()
 
-        this.$refs.name.focus()
+        this.$refs.fistName.focus()
       }
     }
   }

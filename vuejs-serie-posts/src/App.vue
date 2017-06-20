@@ -2,11 +2,11 @@
   <div id="app" class="container">
     <ul class="list-group">
       <li class="list-group-item">
-        <router-link to="insert">Insert data</router-link>
+        <router-link to="insert">Insert data - Vuex</router-link>
 
       </li>
       <li class="list-group-item">
-        <router-link to="table">Table data</router-link>
+        <router-link to="table">Table data - Vuex</router-link>
       </li>
     </ul>
     <router-view></router-view>
