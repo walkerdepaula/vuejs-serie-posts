@@ -1,0 +1,19 @@
+<div>
+  <section>
+    <form v-on:submit.prevent="submit">
+      <div class="form-group">
+        <label ref="fistName" for="fistName">First name</label>
+        <input type="text" class="form-control" id="fistName" placeholder="Fist name"
+        v-model="form.fistName">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Last name"
+        v-model="form.lastName">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </section>
+</div>

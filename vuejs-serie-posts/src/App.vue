@@ -3,10 +3,16 @@
     <ul class="list-group">
       <li class="list-group-item">
         <router-link to="insert">Insert data - Vuex</router-link>
-
       </li>
       <li class="list-group-item">
         <router-link to="table">Table data - Vuex</router-link>
+      </li>
+
+      <li class="list-group-item">
+        <router-link to="insertEventBus">Insert data - EventBus</router-link>
+      </li>
+      <li class="list-group-item">
+        <router-link to="tableEventBus">Table data - EventBus</router-link>
       </li>
     </ul>
     <router-view></router-view>

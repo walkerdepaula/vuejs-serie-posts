@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Fist name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(data, index) in list">
+      <td>{{ index+= 1 }}</td>
+      <td>{{ data.fistName }}</td>
+      <td>{{ data.lastName }}</td>
+    </tr>
+  </tbody>
+</table>

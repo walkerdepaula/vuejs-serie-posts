@@ -9,10 +9,16 @@ import store from './store'
 // Components
 import App from './App'
 
+// Plugins
+import EventBus from './plugins/eventbus'
+
 // Configure productionTip
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+
+Vue.use(EventBus)
+
 new Vue({
   el: '#app',
   router,
